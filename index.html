@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>새마을방앗간 - 시흥 하중동 정직한 가족 방앗간</title>
+    <meta name="description" content="아버지와 어머니, 두 분의 이름과 얼굴을 걸고 운영하는 시흥의 보물 같은 가족 방앗간. 100% 국산 참기름, 들기름, 고춧가루, 당일 생산 떡을 만나보세요.">
+    
+    <!-- Tailwind CSS 로드 -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts (Gowun Dodum) 로드 -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Gowun+Dodum&family=Noto+Sans+KR:wght@700;900&display=swap" rel="stylesheet">
+    
+    <!-- 아이콘 라이브러리 (Phosphor Icons) 로드 -->
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    
+    <style>
+        body {
+            font-family: 'Gowun Dodum', sans-serif;
+            line-height: 1.7;
+        }
+        h1, h2, h3, h4, h5, h6, .font-noto {
+            font-family: 'Noto Sans KR', sans-serif;
+        }
+        html {
+            scroll-behavior: smooth;
+        }
+        .section-title {
+            font-weight: 900;
+            font-size: 2.25rem; /* 36px */
+            line-height: 1.3;
+            color: #2c3e50;
+            margin-bottom: 1rem;
+        }
+        .section-subtitle {
+            font-size: 1.125rem; /* 18px */
+            color: #555;
+            margin-bottom: 3rem;
+        }
+        .point-green { color: #276749; }
+        .bg-point-green { background-color: #276749; }
+        .hover\:bg-point-green-dark:hover { background-color: #22543d; }
+        .border-point-green { border-color: #276749; }
+        
+        .text-shadow {
+            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
+        }
+        .text-shadow-sm {
+            text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.6);
+        }
+
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+
+    <!-- 헤더 및 네비게이션 -->
+    <header class="bg-white/90 backdrop-blur-lg sticky top-0 z-50 shadow-sm">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="#" class="text-2xl font-black point-green">새마을방앗간</a>
+            <nav class="hidden md:flex space-x-8">
+                <a href="#intro" class="text-gray-600 hover:point-green">주인장 소개</a>
+                <a href="#products" class="text-gray-600 hover:point-green">대표 제품</a>
+                <a href="#gallery" class="text-gray-600 hover:point-green">방앗간 일상</a>
+                <a href="#location" class="text-gray-600 hover:point-green">오시는 길</a>
+            </nav>
+            <a href="tel:0507-1467-0934" class="hidden md:inline-block bg-point-green text-white px-5 py-2 rounded-lg hover:bg-point-green-dark transition-colors font-noto">
+                <i class="ph ph-phone mr-2"></i>전화 주문
+            </a>
+            <button id="mobile-menu-button" class="md:hidden text-gray-700">
+                <i class="ph ph-list text-3xl"></i>
+            </button>
+        </div>
+    </header>
+
+    <!-- 모바일 메뉴 (숨겨진 상태) -->
+    <div id="mobile-menu" class="hidden md:hidden bg-white/95 backdrop-blur-md fixed top-0 left-0 w-full h-full z-40 pt-20">
+        <nav class="flex flex-col items-center space-y-8 text-2xl">
+            <a href="#intro" class="text-gray-700 hover:point-green">주인장 소개</a>
+            <a href="#products" class="text-gray-700 hover:point-green">대표 제품</a>
+            <a href="#gallery" class="text-gray-700 hover:point-green">방앗간 일상</a>
+            <a href="#location" class="text-gray-700 hover:point-green">오시는 길</a>
+            <a href="tel:0507-1467-0934" class="mt-8 bg-point-green text-white px-6 py-3 rounded-lg hover:bg-point-green-dark transition-colors font-noto">
+                <i class="ph ph-phone mr-2"></i>전화 주문하기
+            </a>
+        </nav>
+    </div>
+
+
+    <main>
+        <!-- 메인 섹션 (Hero) -->
+        <section class="relative h-[60vh] md:h-[80vh] flex items-center justify-center text-center text-white">
+            <!-- 
+                *** 이미지 경로 수정됨 ***
+                중요: images 폴더에 넣으신 사진 파일 이름과 아래 src=" " 안의 파일 이름이 같아야 합니다.
+                예: 사진 파일 이름이 1.jpg 라면 -> src="images/1.jpg"
+            -->
+            <img src="images/owners.jpg" 
+                 alt="새마을방앗간 주인장 부부의 따뜻한 모습" 
+                 class="absolute inset-0 w-full h-full object-cover -z-10 brightness-75">
+            
+            <div class="container mx-auto px-6">
+                <h1 class="text-4xl md:text-6xl font-black leading-tight mb-4 font-noto text-shadow">두 분의 정직한 땀, 따뜻한 미소로<br>진짜를 만듭니다</h1>
+                <p class="text-lg md:text-xl text-shadow-sm">아버지와 어머니, 두 분의 이름과 얼굴을 걸고 운영하는 시흥의 보물 같은 가족 방앗간</p>
+                <div class="mt-8 space-x-4 font-noto">
+                    <a href="#products" class="bg-point-green hover:bg-point-green-dark text-white font-bold py-3 px-8 rounded-full transition-transform hover:scale-105 shadow-lg">대표 제품 보기</a>
+                    <a href="#location" class="bg-white/30 backdrop-blur-sm hover:bg-white/50 text-white font-bold py-3 px-8 rounded-full transition-colors shadow-lg">오시는 길</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- 주인장 소개 섹션 -->
+        <section id="intro" class="py-20 bg-white">
+            <div class="container mx-auto px-6 text-center">
+                <h2 class="section-title font-noto">저희가 직접 만듭니다</h2>
+                <p class="section-subtitle">시흥 하중동 새마을방앗간입니다</p>
+                <div class="max-w-4xl mx-auto grid md:grid-cols-2 gap-12 items-center">
+                    <div class="rounded-lg overflow-hidden shadow-lg">
+                        <!-- 중요: 이 곳의 파일 이름도 images 폴더 안의 실제 파일 이름과 같게 맞춰주세요. -->
+                        <img src="images/owners.jpg" 
+                             alt="새마을방앗간 주인장 부부" 
+                             class="w-full h-full object-cover">
+                    </div>
+                    <div class="text-left space-y-6 text-lg">
+                        <p class="font-bold">"안녕하세요, 시흥 하중동에서 새마을방앗간을 운영하는 주인장입니다."</p>
+                        <p class="text-gray-700">4년 전, 내 가족이 먹는다는 마음으로 가장 정직한 제품을 만들고 싶다는 꿈을 안고 이곳에 터를 잡았습니다. 저희의 땀과 정성이 담긴 제품 하나하나가 여러분의 식탁에 건강한 행복을 더하기를 바랍니다.</p>
+                        <div class="border-l-4 border-point-green pl-4 space-y-4">
+                            <div>
+                                <h3 class="font-bold font-noto text-lg">가족이 먹는다는 마음</h3>
+                                <p class="text-gray-600">언제나 정성을 다해 깨끗하게 제조합니다.</p>
+                            </div>
+                            <div>
+                                <h3 class="font-bold font-noto text-lg">투명한 원산지 공개</h3>
+                                <p class="text-gray-600">모든 재료의 원산지를 정직하게 공개합니다.</p>
+                            </div>
+                            <div>
+                                <h3 class="font-bold font-noto text-lg">매일 만드는 신선함</h3>
+                                <p class="text-gray-600">떡과 기름 등 주요 제품은 매일 신선하게 만듭니다.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 신뢰/인증 섹션 -->
+        <section id="trust" class="py-20 bg-gray-50">
+            <div class="container mx-auto px-6 text-center">
+                <h2 class="section-title font-noto">얼굴을 걸고 약속합니다</h2>
+                <p class="section-subtitle">투명하고 정직한 새마을방앗간의 증명</p>
+                <div class="grid md:grid-cols-2 gap-12 items-center">
+                    <div class="space-y-4">
+                        <h3 class="text-2xl font-bold text-left font-noto">정식 등록 사업장</h3>
+                        <p class="text-gray-700 text-left">식품위생법에 따른 정식 신고 사업장으로 항상 안전하고 깨끗하게 운영하고 있습니다. 믿고 드실 수 있도록 모든 과정을 투명하게 관리합니다.</p>
+                        <!-- 중요: images 폴더에 넣은 영업신고증 사진 파일명으로 아래를 수정해주세요. -->
+                        <img src="images/certificates.jpg" 
+                             alt="새마을방앗간 영업신고증 및 수료증" 
+                             class="rounded-lg shadow-md w-full border">
+                    </div>
+                    <div class="space-y-4">
+                        <h3 class="text-2xl font-bold text-left font-noto">원산지 투명 공개</h3>
+                        <p class="text-gray-700 text-left">어떤 재료를 사용하는지 고객님께서 아는 것은 당연한 권리입니다. 모든 제품의 원산지를 매장에 정직하게 표기하여 고객님의 선택권을 보장합니다.</p>
+                        <!-- 중요: images 폴더에 넣은 원산지 표시판 사진 파일명으로 아래를 수정해주세요. -->
+                        <img src="images/origin_board.jpg" 
+                             alt="새마을방앗간 원산지 표시판" 
+                             class="rounded-lg shadow-md w-full border">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 대표 제품 섹션 -->
+        <section id="products" class="py-20 bg-white">
+            <div class="container mx-auto px-6 text-center">
+                <h2 class="section-title font-noto">지방에서도 찾아오는 이유</h2>
+                <p class="section-subtitle">새마을방앗간의 자랑스러운 대표 제품들</p>
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- 제품 카드 1: 참기름. images 폴더의 참기름 사진 파일명으로 수정하세요. -->
+                    <div class="bg-gray-50 rounded-lg shadow-lg overflow-hidden transform hover:-translate-y-2 transition-transform duration-300">
+                        <img src="images/product_sesame_oil.jpg" alt="고소한 참기름" class="w-full h-56 object-cover">
+                        <div class="p-6 text-left">
+                            <h3 class="text-xl font-bold mb-2 font-noto">참기름</h3>
+                            <p class="text-gray-700">100% 통깨를 정성껏 볶아 딱 한 번만 짜내립니다. 뚜껑을 여는 순간 온 집에 퍼지는 고소한 향이 일품입니다.</p>
+                        </div>
+                    </div>
+                    <!-- 제품 카드 2: 들기름. images 폴더의 들기름 사진 파일명으로 수정하세요. -->
+                    <div class="bg-gray-50 rounded-lg shadow-lg overflow-hidden transform hover:-translate-y-2 transition-transform duration-300">
+                        <img src="images/product_perilla_oil.jpg" alt="신선한 들기름" class="w-full h-56 object-cover">
+                        <div class="p-6 text-left">
+                            <h3 class="text-xl font-bold mb-2 font-noto">들기름</h3>
+                            <p class="text-gray-700">신선한 들깨를 저온으로 압착해 본연의 향긋한 풍미가 살아있습니다. 나물 무침에 사용하면 감칠맛이 살아납니다.</p>
+                        </div>
+                    </div>
+                    <!-- 제품 카드 3: 고춧가루. images 폴더의 고춧가루 사진 파일명으로 수정하세요. -->
+                    <div class="bg-gray-50 rounded-lg shadow-lg overflow-hidden transform hover:-translate-y-2 transition-transform duration-300">
+                        <img src="images/product_chili_powder.jpg" alt="빛깔 좋은 고춧가루" class="w-full h-56 object-cover">
+                        <div class="p-6 text-left">
+                            <h3 class="text-xl font-bold mb-2 font-noto">고춧가루</h3>
+                            <p class="text-gray-700">좋은 고추를 직접 들여와 곱게 빻아, 텁텁하지 않고 맑은 붉은빛이 특징입니다. 김치와 찌개 맛의 비결입니다.</p>
+                        </div>
+                    </div>
+                    <!-- 제품 카드 4: 미숫가루. images 폴더의 미숫가루 사진 파일명으로 수정하세요. -->
+                    <div class="bg-gray-50 rounded-lg shadow-lg overflow-hidden transform hover:-translate-y-2 transition-transform duration-300">
+                        <img src="images/product_misutgaru.jpg" alt="든든한 미숫가루" class="w-full h-56 object-cover">
+                        <div class="p-6 text-left">
+                            <h3 class="text-xl font-bold mb-2 font-noto">미숫가루</h3>
+                            <p class="text-gray-700">10가지 엄선된 국산 곡물을 황금 비율로 배합했습니다. 바쁜 아침 든든한 한 끼 식사, 아이들 영양 간식으로 최고입니다.</p>
+                        </div>
+                    </div>
+                    <!-- 제품 카드 5: 인절미. images 폴더의 인절미 사진 파일명으로 수정하세요. -->
+                    <div class="bg-gray-50 rounded-lg shadow-lg overflow-hidden transform hover:-translate-y-2 transition-transform duration-300">
+                        <img src="images/product_injeolmi.jpg" alt="당일 생산 인절미" class="w-full h-56 object-cover">
+                        <div class="p-6 text-left">
+                            <h3 class="text-xl font-bold mb-2 font-noto">인절미</h3>
+                            <p class="text-gray-700">그날 만든 찹쌀떡에 고소한 콩고물을 아낌없이 묻혀냅니다. 입안에서 사르르 녹는 부드러움을 느껴보세요.</p>
+                        </div>
+                    </div>
+                    <!-- 제품 카드 6: 가래떡. images 폴더의 가래떡 사진 파일명으로 수정하세요. -->
+                    <div class="bg-gray-50 rounded-lg shadow-lg overflow-hidden transform hover:-translate-y-2 transition-transform duration-300">
+                        <img src="images/product_garaetteok.jpg" alt="쫄깃한 가래떡" class="w-full h-56 object-cover">
+                        <div class="p-6 text-left">
+                            <h3 class="text-xl font-bold mb-2 font-noto">가래떡</h3>
+                            <p class="text-gray-700">오직 좋은 쌀로만 길게 뽑아내 쌀 본연의 단맛이 살아있습니다. 오래 끓여도 쉽게 퍼지지 않고 쫀득함이 유지됩니다.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 방앗간 일상 (갤러리) -->
+        <section id="gallery" class="py-20 bg-gray-50">
+            <div class="container mx-auto px-6 text-center">
+                <h2 class="section-title font-noto">오늘도 방앗간은 활기가 넘칩니다</h2>
+                <p class="section-subtitle">새벽부터 시작되는 정성 가득한 하루</p>
+                <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+                    <!-- 갤러리 이미지들: 아래 src의 파일명들을 images 폴더 안의 실제 사진 파일명으로 수정해주세요. -->
+                    <div class="overflow-hidden rounded-lg shadow-md aspect-w-1 aspect-h-1"><img src="images/gallery_01.jpg" alt="갓 만든 가래떡 앞의 사장님 부부" class="w-full h-full object-cover transform hover:scale-110 transition-transform duration-300"></div>
+                    <div class="overflow-hidden rounded-lg shadow-md aspect-w-1 aspect-h-1"><img src="images/gallery_02.jpg" alt="기름 짜는 기계" class="w-full h-full object-cover transform hover:scale-110 transition-transform duration-300"></div>
+                    <div class="overflow-hidden rounded-lg shadow-md aspect-w-1 aspect-h-1"><img src="images/gallery_03.jpg" alt="포장 대기 중인 제품들" class="w-full h-full object-cover transform hover:scale-110 transition-transform duration-300"></div>
+                    <div class="overflow-hidden rounded-lg shadow-md aspect-w-1 aspect-h-1"><img src="images/gallery_04.jpg" alt="손님과 함께 있는 모습" class="w-full h-full object-cover transform hover:scale-110 transition-transform duration-300"></div>
+                    <div class="overflow-hidden rounded-lg shadow-md aspect-w-1 aspect-h-1"><img src="images/gallery_05.jpg" alt="깨끗한 작업 공간" class="w-full h-full object-cover transform hover:scale-110 transition-transform duration-300"></div>
+                    <div class="overflow-hidden rounded-lg shadow-md aspect-w-1 aspect-h-1"><img src="images/gallery_06.jpg" alt="전통 방식으로 작업하는 모습" class="w-full h-full object-cover transform hover:scale-110 transition-transform duration-300"></div>
+                    <div class="overflow-hidden rounded-lg shadow-md aspect-w-1 aspect-h-1 col-span-2"><img src="images/gallery_07.jpg" alt="방앗간 전경" class="w-full h-full object-cover transform hover:scale-110 transition-transform duration-300"></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 고객 후기 섹션 -->
+        <section id="testimonials" class="py-20 bg-white">
+            <div class="container mx-auto px-6 text-center">
+                <h2 class="section-title font-noto">고객의 목소리</h2>
+                <p class="section-subtitle">멀리서도 찾아오시는 고객들의 진심어린 후기</p>
+                <div class="grid md:grid-cols-3 gap-8 text-left">
+                    <div class="bg-gray-50 p-8 rounded-lg shadow-md border-t-4 border-amber-400">
+                        <i class="ph ph-quotes text-4xl text-amber-400 mb-4"></i>
+                        <p class="text-gray-700 mb-4">"이 참기름 사려고 한 시간 걸려 왔어요. 정말 고소하고 진짜 참기름 맛이 나요. 시중에서 파는 것과는 차원이 달라요!"</p>
+                        <p class="font-bold font-noto">- 김동훈 고객 (인천에서)</p>
+                    </div>
+                    <div class="bg-gray-50 p-8 rounded-lg shadow-md border-t-4 border-amber-400">
+                        <i class="ph ph-quotes text-4xl text-amber-400 mb-4"></i>
+                        <p class="text-gray-700 mb-4">"여기 인절미는 정말 차원이 달라요. 당일 만든 것이라 그런지 쫄깃함이 최고예요. 아이들이 너무 좋아해서 매주 와요."</p>
+                        <p class="font-bold font-noto">- 이동민 고객 (수원에서)</p>
+                    </div>
+                    <div class="bg-gray-50 p-8 rounded-lg shadow-md border-t-4 border-amber-400">
+                        <i class="ph ph-quotes text-4xl text-amber-400 mb-4"></i>
+                        <p class="text-gray-700 mb-4">"사장님 부부가 정말 정성스럽게 해주세요. 고춧가루도 맵기만 한 게 아니라 달콤함도 있어서 김치가 정말 맛있게 돼요."</p>
+                        <p class="font-bold font-noto">- 신호진 고객 (안산에서)</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 오시는 길 및 영업 안내 -->
+        <section id="location" class="py-20 bg-gray-50">
+            <div class="container mx-auto px-6">
+                <div class="text-center">
+                    <h2 class="section-title font-noto">오시는 길 및 영업 안내</h2>
+                    <p class="section-subtitle">새마을방앗간을 쉽게 찾아주세요</p>
+                </div>
+                <div class="grid md:grid-cols-2 gap-12 items-center">
+                    <div>
+                        <!-- 중요: images 폴더에 넣은 가게 간판 사진 파일명으로 아래를 수정해주세요. -->
+                        <img src="images/storefront.jpg" 
+                             alt="새마을방앗간 정면 간판" 
+                             class="rounded-lg shadow-lg w-full mb-8 border">
+                        
+                        <div class="bg-white p-6 rounded-lg shadow-md">
+                            <h3 class="font-bold text-xl mb-4 font-noto">영업 시간</h3>
+                            <ul class="space-y-2 text-gray-700">
+                                <li class="flex items-center"><i class="ph ph-calendar-check point-green mr-3"></i> <strong>운영일:</strong> 월, 화, 목, 금, 토, 일</li>
+                                <li class="flex items-center"><i class="ph ph-clock point-green mr-3"></i> <strong>운영시간:</strong> 오전 9시 - 오후 7시</li>
+                                <li class="flex items-center"><i class="ph ph-calendar-x text-red-500 mr-3"></i> <strong>정기 휴무:</strong> 매주 수요일</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div>
+                        <!-- 지도 부분: 네이버 지도 공유 코드로 교체 -->
+                        <div class="aspect-w-16 aspect-h-9 rounded-lg overflow-hidden shadow-lg mb-8 border">
+                            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3171.185292671041!2d126.84024801563202!3d37.3622449798363!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x357b6e0a8b9e6a9f%3A0x633532c52516447!2z6rK96riw64-EIOyEseuCqOq1rCDtlZzsp4DroZwg7ZWY7Kec66GcMTM267KI6ri4IDQtMTM!5e0!3m2!1sko!2skr!4v1662534578123!5m2!1sko!2skr" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                        </div>
+                        <div class="bg-white p-6 rounded-lg shadow-md">
+                            <h3 class="font-bold text-xl mb-4 font-noto">연락처 및 주소</h3>
+                            <ul class="space-y-3 text-gray-700">
+                                <li class="flex items-start"><i class="ph ph-phone-call point-green mr-3 mt-1"></i> <div><strong>전화:</strong> <a href="tel:0507-1467-0934" class="text-blue-600 hover:underline">0507-1467-0934</a> (클릭하여 전화걸기)</div></li>
+                                <li class="flex items-start"><i class="ph ph-map-pin point-green mr-3 mt-1"></i> <div><strong>주소:</strong> 경기도 시흥시 하중로136번길 4-13, 1층</div></li>
+                                <li class="flex items-start"><i class="ph ph-bus point-green mr-3 mt-1"></i> <div><strong>교통편:</strong> 하중동 버스정류장에서 도보 3분</div></li>
+                                <li class="flex items-start"><i class="ph ph-car point-green mr-3 mt-1"></i> <div><strong>주차:</strong> 가게 주변 주차 공간 이용 가능</div></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- 푸터 -->
+    <footer class="bg-gray-800 text-white">
+        <div class="container mx-auto px-6 py-8 text-center">
+            <p class="font-bold text-lg mb-2 font-noto">새마을방앗간</p>
+            <p class="text-gray-400">대표: OOO | 사업자등록번호: OOO-OO-OOOOO</p>
+            <p class="text-gray-400">주소: 경기도 시흥시 하중로136번길 4-13, 1층 | 전화: 0507-1467-0934</p>
+            <p class="mt-4 text-sm text-gray-500">&copy; <span id="year"></span> 새마을방앗간. All rights reserved.</p>
+        </div>
+    </footer>
+    
+    <!-- 맨 위로 가기 버튼 -->
+    <button id="to-top-button" title="맨 위로" class="hidden fixed bottom-8 right-8 bg-point-green text-white w-12 h-12 rounded-full shadow-lg flex items-center justify-center hover:bg-point-green-dark transition-all">
+        <i class="ph ph-arrow-up text-2xl"></i>
+    </button>
+
+
+    <script>
+        // 현재 연도를 푸터에 자동 표시
+        document.getElementById('year').textContent = new Date().getFullYear();
+
+        // 모바일 메뉴 토글 기능
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+        // 모바일 메뉴의 링크 클릭 시 메뉴 닫기
+        mobileMenu.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+
+        // 맨 위로 가기 버튼 기능
+        const toTopButton = document.getElementById('to-top-button');
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 300) {
+                toTopButton.classList.remove('hidden');
+            } else {
+                toTopButton.classList.add('hidden');
+            }
+        });
+        toTopButton.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+    </script>
+
+</body>
+</html>
