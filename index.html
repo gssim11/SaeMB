@@ -51,7 +51,12 @@
         .text-shadow-sm {
             text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.6);
         }
-
+        /* aspect-ratio is a modern alternative to the deprecated aspect-w-N classes */
+        @supports (aspect-ratio: 1 / 1) {
+            .aspect-square {
+                aspect-ratio: 1 / 1;
+            }
+        }
     </style>
 </head>
 <body class="bg-gray-50 text-gray-800">
@@ -62,6 +67,7 @@
             <a href="#" class="text-2xl font-black point-green">새마을방앗간</a>
             <nav class="hidden md:flex space-x-8">
                 <a href="#intro" class="text-gray-600 hover:point-green">주인장 소개</a>
+                <a href="#features" class="text-gray-600 hover:point-green">특별함</a>
                 <a href="#products" class="text-gray-600 hover:point-green">대표 제품</a>
                 <a href="#gallery" class="text-gray-600 hover:point-green">방앗간 일상</a>
                 <a href="#location" class="text-gray-600 hover:point-green">오시는 길</a>
@@ -79,6 +85,7 @@
     <div id="mobile-menu" class="hidden md:hidden bg-white/95 backdrop-blur-md fixed top-0 left-0 w-full h-full z-40 pt-20">
         <nav class="flex flex-col items-center space-y-8 text-2xl">
             <a href="#intro" class="text-gray-700 hover:point-green">주인장 소개</a>
+            <a href="#features" class="text-gray-700 hover:point-green">특별함</a>
             <a href="#products" class="text-gray-700 hover:point-green">대표 제품</a>
             <a href="#gallery" class="text-gray-700 hover:point-green">방앗간 일상</a>
             <a href="#location" class="text-gray-700 hover:point-green">오시는 길</a>
@@ -92,13 +99,14 @@
     <main>
         <!-- 메인 섹션 (Hero) -->
         <section class="relative h-[60vh] md:h-[80vh] flex items-center justify-center text-center text-white">
-            <!-- 메인 배경사진: '1.jpg' 파일을 images 폴더에 업로드해주세요. -->
             <img src="images/1.jpg" 
-                 alt="새마을방앗간 주인장 부부의 따뜻한 모습" 
-                 class="absolute inset-0 w-full h-full object-cover -z-10 brightness-75">
+                 alt="새마을방앗간의 정겨운 모습과 갓 나온 가래떡" 
+                 class="absolute inset-0 w-full h-full object-cover -z-10 brightness-75"
+                 onerror="this.onerror=null;this.src='https://placehold.co/1920x1080/666/fff?text=Main+Image';">
             
             <div class="container mx-auto px-6">
-                <h1 class="text-4xl md:text-6xl font-black leading-tight mb-4 font-noto text-shadow">두 분의 정직한 땀, 따뜻한 미소로<br>진짜를 만듭니다</h1>
+                <h2 class="text-6xl md:text-8xl font-black point-green text-shadow-sm mb-4 font-noto">새마을방앗간</h2>
+                <h1 class="text-3xl md:text-5xl font-black leading-tight mb-4 font-noto text-shadow">두 분의 정직한 땀, 따뜻한 미소로<br>진짜를 만듭니다</h1>
                 <p class="text-lg md:text-xl text-shadow-sm">아버지와 어머니, 두 분의 이름과 얼굴을 걸고 운영하는 시흥의 보물 같은 방앗간</p>
                 <div class="mt-8 space-x-4 font-noto">
                     <a href="#products" class="bg-point-green hover:bg-point-green-dark text-white font-bold py-3 px-8 rounded-full transition-transform hover:scale-105 shadow-lg">대표 제품 보기</a>
@@ -114,10 +122,10 @@
                 <p class="section-subtitle">시흥 하중동 새마을방앗간입니다</p>
                 <div class="max-w-4xl mx-auto grid md:grid-cols-2 gap-12 items-center">
                     <div class="rounded-lg overflow-hidden shadow-lg">
-                        <!-- 주인장 소개 사진: '1737287777511.jpg' 파일을 images 폴더에 업로드해주세요. -->
-                        <img src="images/1737287777511.jpg" 
-                             alt="새마을방앗간 주인장 부부와 갓 나온 가래떡" 
-                             class="w-full h-full object-cover">
+                        <img src="images/2.jpg" 
+                             alt="새마을방앗간 주인장 부부" 
+                             class="w-full h-full object-cover"
+                             onerror="this.onerror=null;this.src='https://placehold.co/800x800/ccc/fff?text=Owners';">
                     </div>
                     <div class="text-left space-y-6 text-lg">
                         <p class="font-bold">"안녕하세요, 시흥 하중동에서 새마을방앗간을 운영하는 주인장입니다."</p>
@@ -141,8 +149,33 @@
             </div>
         </section>
 
+        <!-- 특별함 섹션 -->
+        <section id="features" class="py-20 bg-gray-50">
+            <div class="container mx-auto px-6 text-center">
+                <h2 class="section-title font-noto">새마을방앗간의 특별함</h2>
+                <p class="section-subtitle">넓은 규모와 최신 설비로 빠르고 위생적인 환경에서 최고의 제품을 만듭니다.</p>
+                <div class="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+                    <div class="bg-white p-8 rounded-lg shadow-md text-center border-b-4 border-point-green">
+                        <i class="ph-storefront text-5xl point-green mb-4"></i>
+                        <h3 class="text-xl font-bold mb-2 font-noto">큰 규모 시설</h3>
+                        <p class="text-gray-600">1층 건물 전체를 사용하여 넓고 쾌적한 공간에서 모든 제품을 위생적으로 관리하고 생산합니다.</p>
+                    </div>
+                    <div class="bg-white p-8 rounded-lg shadow-md text-center border-b-4 border-point-green">
+                        <i class="ph-gear-six text-5xl point-green mb-4"></i>
+                        <h3 class="text-xl font-bold mb-2 font-noto">다양한 전문 제조 설비</h3>
+                        <p class="text-gray-600">떡, 고춧가루, 참기름 등 각 제품을 위한 전문 기계를 다수 보유하여 대량 주문도 문제 없습니다.</p>
+                    </div>
+                    <div class="bg-white p-8 rounded-lg shadow-md text-center border-b-4 border-point-green">
+                        <i class="ph-timer text-5xl point-green mb-4"></i>
+                        <h3 class="text-xl font-bold mb-2 font-noto">주문 즉시, 신속한 생산</h3>
+                        <p class="text-gray-600">최신 설비로 주문 즉시 신속하게 제조하여, 언제나 가장 신선한 제품을 당일 제공해 드립니다.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
         <!-- 신뢰/인증 섹션 -->
-        <section id="trust" class="py-20 bg-gray-50">
+        <section id="trust" class="py-20 bg-white">
             <div class="container mx-auto px-6 text-center">
                 <h2 class="section-title font-noto">얼굴을 걸고 약속합니다</h2>
                 <p class="section-subtitle">투명하고 정직한 새마을방앗간의 증명</p>
@@ -150,16 +183,14 @@
                     <div class="space-y-4">
                         <h3 class="text-2xl font-bold text-left font-noto">정식 등록 사업장</h3>
                         <p class="text-gray-700 text-left">식품위생법에 따른 정식 신고 사업장으로 항상 안전하고 깨끗하게 운영하고 있습니다. 믿고 드실 수 있도록 모든 과정을 투명하게 관리합니다.</p>
-                        <!-- 영업신고증 사진: 'certificates.jpg' 이름으로된 사진이 없으므로, 회색 이미지로 대체됩니다. -->
-                        <img src="111" 
+                        <img src="images/3.jpg" 
                              alt="새마을방앗간 영업신고증 및 수료증" 
                              class="rounded-lg shadow-md w-full border">
                     </div>
                     <div class="space-y-4">
                         <h3 class="text-2xl font-bold text-left font-noto">원산지 투명 공개</h3>
                         <p class="text-gray-700 text-left">어떤 재료를 사용하는지 고객님께서 아는 것은 당연한 권리입니다. 모든 제품의 원산지를 매장에 정직하게 표기하여 고객님의 선택권을 보장합니다.</p>
-                        <!-- 원산지 표시판 사진: 'origin_board.jpg' 이름으로된 사진이 없으므로, 회색 이미지로 대체됩니다. -->
-                        <img src="1111" 
+                        <img src="images/4.jpg" 
                              alt="새마을방앗간 원산지 표시판" 
                              class="rounded-lg shadow-md w-full border">
                     </div>
@@ -168,65 +199,51 @@
         </section>
 
         <!-- 대표 제품 섹션 -->
-        <section id="products" class="py-20 bg-white">
+        <section id="products" class="py-20 bg-gray-50">
             <div class="container mx-auto px-6 text-center">
                 <h2 class="section-title font-noto">지방에서도 찾아오는 이유</h2>
                 <p class="section-subtitle">새마을방앗간의 자랑스러운 대표 제품들</p>
                 <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
                     <!-- 제품 카드 1: 참기름 -->
-                    <div class="bg-gray-50 rounded-lg shadow-lg overflow-hidden transform hover:-translate-y-2 transition-transform duration-300">
-                        <img src="images/11.jpg" alt="고소한 참기름" class="w-full h-56 object-cover">
+                    <div class="bg-white rounded-lg shadow-lg overflow-hidden transform hover:-translate-y-2 transition-transform duration-300">
+                        <img src="images/5.jpg" alt="고소한 참기름" class="w-full h-56 object-cover" onerror="this.onerror=null;this.src='https://placehold.co/600x400/ccc/fff?text=Product';">
                         <div class="p-6 text-left">
                             <h3 class="text-xl font-bold mb-2 font-noto">참기름</h3>
-                            <p class="text-gray-700">100% 통깨를 정성껏 볶아 딱 한 번만 짜내립니다. 뚜껑을 여는 순간 온 집에 퍼지는 고소한 향이 일품입니다.</p>
                         </div>
                     </div>
                     <!-- 제품 카드 2: 들기름 -->
-                    <div class="bg-gray-50 rounded-lg shadow-lg overflow-hidden transform hover:-translate-y-2 transition-transform duration-300">
-                        <img src="images/22.jpg" alt="신선한 들기름" class="w-full h-56 object-cover">
+                    <div class="bg-white rounded-lg shadow-lg overflow-hidden transform hover:-translate-y-2 transition-transform duration-300">
+                        <img src="images/6.jpg" alt="신선한 들기름" class="w-full h-56 object-cover" onerror="this.onerror=null;this.src='https://placehold.co/600x400/ccc/fff?text=Product';">
                         <div class="p-6 text-left">
                             <h3 class="text-xl font-bold mb-2 font-noto">들기름</h3>
-                            <p class="text-gray-700">신선한 들깨를 저온으로 압착해 본연의 향긋한 풍미가 살아있습니다. 나물 무침에 사용하면 감칠맛이 살아납니다.</p>
                         </div>
                     </div>
                     <!-- 제품 카드 3: 고춧가루 -->
-                    <div class="bg-gray-50 rounded-lg shadow-lg overflow-hidden transform hover:-translate-y-2 transition-transform duration-300">
-                        <img src="images/33.jpg" alt="빛깔 좋은 고춧가루" class="w-full h-56 object-cover">
+                    <div class="bg-white rounded-lg shadow-lg overflow-hidden transform hover:-translate-y-2 transition-transform duration-300">
+                        <img src="images/7.jpg" alt="빛깔 좋은 고춧가루" class="w-full h-56 object-cover" onerror="this.onerror=null;this.src='https://placehold.co/600x400/ccc/fff?text=Product';">
                         <div class="p-6 text-left">
                             <h3 class="text-xl font-bold mb-2 font-noto">고춧가루</h3>
-                            <p class="text-gray-700">좋은 고추를 직접 들여와 곱게 빻아, 텁텁하지 않고 맑은 붉은빛이 특징입니다. 김치와 찌개 맛의 비결입니다.</p>
                         </div>
                     </div>
                     <!-- 제품 카드 4: 미숫가루 -->
-                    <div class="bg-gray-50 rounded-lg shadow-lg overflow-hidden transform hover:-translate-y-2 transition-transform duration-300">
-                        <img src="images/44.jpg" alt="든든한 미숫가루" class="w-full h-56 object-cover">
+                    <div class="bg-white rounded-lg shadow-lg overflow-hidden transform hover:-translate-y-2 transition-transform duration-300">
+                        <img src="images/8.jpg" alt="든든한 미숫가루" class="w-full h-56 object-cover" onerror="this.onerror=null;this.src='https://placehold.co/600x400/ccc/fff?text=Product';">
                         <div class="p-6 text-left">
                             <h3 class="text-xl font-bold mb-2 font-noto">미숫가루</h3>
-                            <p class="text-gray-700">10가지 엄선된 국산 곡물을 황금 비율로 배합했습니다. 바쁜 아침 든든한 한 끼 식사, 아이들 영양 간식으로 최고입니다.</p>
                         </div>
                     </div>
                     <!-- 제품 카드 5: 인절미 -->
-                    <div class="bg-gray-50 rounded-lg shadow-lg overflow-hidden transform hover:-translate-y-2 transition-transform duration-300">
-                        <img src="images/55.jpg" alt="당일 생산 인절미" class="w-full h-56 object-cover">
+                    <div class="bg-white rounded-lg shadow-lg overflow-hidden transform hover:-translate-y-2 transition-transform duration-300">
+                        <img src="images/9.jpg" alt="당일 생산 인절미" class="w-full h-56 object-cover" onerror="this.onerror=null;this.src='https://placehold.co/600x400/ccc/fff?text=Product';">
                         <div class="p-6 text-left">
                             <h3 class="text-xl font-bold mb-2 font-noto">인절미</h3>
-                            <p class="text-gray-700">그날 만든 찹쌀떡에 고소한 콩고물을 아낌없이 묻혀냅니다. 입안에서 사르르 녹는 부드러움을 느껴보세요.</p>
                         </div>
                     </div>
                     <!-- 제품 카드 6: 가래떡 -->
-                    <div class="bg-gray-50 rounded-lg shadow-lg overflow-hidden transform hover:-translate-y-2 transition-transform duration-300">
-                        <img src="images/66.jpg" alt="쫄깃한 가래떡" class="w-full h-56 object-cover">
+                    <div class="bg-white rounded-lg shadow-lg overflow-hidden transform hover:-translate-y-2 transition-transform duration-300">
+                        <img src="images/10.jpg" alt="쫄깃한 가래떡" class="w-full h-56 object-cover" onerror="this.onerror=null;this.src='https://placehold.co/600x400/ccc/fff?text=Product';">
                         <div class="p-6 text-left">
                             <h3 class="text-xl font-bold mb-2 font-noto">가래떡</h3>
-                            <p class="text-gray-700">오직 좋은 쌀로만 길게 뽑아내 쌀 본연의 단맛이 살아있습니다. 오래 끓여도 쉽게 퍼지지 않고 쫀득함이 유지됩니다.</p>
-                        </div>
-                    </div>
-                    <!-- 제품 카드 7: 절편 (추가됨) -->
-                    <div class="bg-gray-50 rounded-lg shadow-lg overflow-hidden transform hover:-translate-y-2 transition-transform duration-300">
-                        <img src="images/77.jpg" alt="정성가득 절편" class="w-full h-56 object-cover">
-                        <div class="p-6 text-left">
-                            <h3 class="text-xl font-bold mb-2 font-noto">절편</h3>
-                            <p class="text-gray-700">아름다운 떡살 무늬를 정성껏 찍어 만듭니다. 은은한 기름의 고소함과 씹을수록 느껴지는 단맛이 매력적입니다.</p>
                         </div>
                     </div>
                 </div>
@@ -234,41 +251,105 @@
         </section>
 
         <!-- 방앗간 일상 (갤러리) -->
-        <section id="gallery" class="py-20 bg-gray-50">
+        <section id="gallery" class="py-20 bg-white">
             <div class="container mx-auto px-6 text-center">
                 <h2 class="section-title font-noto">오늘도 방앗간은 활기가 넘칩니다</h2>
                 <p class="section-subtitle">새벽부터 시작되는 정성 가득한 하루</p>
                 <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
-                    <!-- 갤러리 사진들: images 폴더에 아래 파일명과 똑같이 저장해주세요. -->
-                    <div class="overflow-hidden rounded-lg shadow-md aspect-w-1 aspect-h-1"><img src="images/20240720_124513.jpg" alt="기름 짜는 기계" class="w-full h-full object-cover transform hover:scale-110 transition-transform duration-300"></div>
-                    <div class="overflow-hidden rounded-lg shadow-md aspect-w-1 aspect-h-1"><img src="images/20240720_124644.jpg" alt="방앗간의 여러 기계들" class="w-full h-full object-cover transform hover:scale-110 transition-transform duration-300"></div>
-                    <div class="overflow-hidden rounded-lg shadow-md aspect-w-1 aspect-h-1"><img src="images/20240720_124525.jpg" alt="판매 준비된 계란과 곡물" class="w-full h-full object-cover transform hover:scale-110 transition-transform duration-300"></div>
-                    <div class="overflow-hidden rounded-lg shadow-md aspect-w-1 aspect-h-1"><img src="images/1703672870407.jpg" alt="손님과 함께" class="w-full h-full object-cover transform hover:scale-110 transition-transform duration-300"></div>
-                    <div class="overflow-hidden rounded-lg shadow-md aspect-w-1 aspect-h-1"><img src="images/1737287785045.jpg" alt="갓 나온 가래떡" class="w-full h-full object-cover transform hover:scale-110 transition-transform duration-300"></div>
-                    <div class="overflow-hidden rounded-lg shadow-md aspect-w-1 aspect-h-1"><img src="images/1703672872915.jpg" alt="준비된 재료들" class="w-full h-full object-cover transform hover:scale-110 transition-transform duration-300"></div>
-                    <div class="overflow-hidden rounded-lg shadow-md aspect-w-1 aspect-h-1"><img src="images/20240720_124634.jpg" alt="떡 만드는 기계" class="w-full h-full object-cover transform hover:scale-110 transition-transform duration-300"></div>
-                    <div class="overflow-hidden rounded-lg shadow-md aspect-w-1 aspect-h-1"><img src="images/20241006_085923.jpg" alt="방앗간 내부 전경" class="w-full h-full object-cover transform hover:scale-110 transition-transform duration-300"></div>
+                    <!-- [수정됨] 갤러리 이미지 경로 변경 -->
+                    <!-- 방앗간 일상 1 -->
+                    <div class="bg-gray-100 rounded-lg shadow-md overflow-hidden transform hover:-translate-y-1 transition-transform duration-300">
+                        <div class="aspect-square overflow-hidden">
+                            <img src="images/11.jpg" alt="방앗간 일상 1" class="w-full h-full object-cover transform hover:scale-110 transition-transform duration-300" onerror="this.onerror=null;this.src='https://placehold.co/400x400/ccc/fff?text=Gallery';">
+                        </div>
+                        <div class="p-3 text-center">
+                            <h3 class="font-bold font-noto text-gray-800">방앗간 일상 1</h3>
+                        </div>
+                    </div>
+                    <!-- 방앗간 일상 2 -->
+                    <div class="bg-gray-100 rounded-lg shadow-md overflow-hidden transform hover:-translate-y-1 transition-transform duration-300">
+                        <div class="aspect-square overflow-hidden">
+                            <img src="images/12.jpg" alt="방앗간 일상 2" class="w-full h-full object-cover transform hover:scale-110 transition-transform duration-300" onerror="this.onerror=null;this.src='https://placehold.co/400x400/ccc/fff?text=Gallery';">
+                        </div>
+                        <div class="p-3 text-center">
+                            <h3 class="font-bold font-noto text-gray-800">방앗간 일상 2</h3>
+                        </div>
+                    </div>
+                    <!-- 방앗간 일상 3 -->
+                    <div class="bg-gray-100 rounded-lg shadow-md overflow-hidden transform hover:-translate-y-1 transition-transform duration-300">
+                        <div class="aspect-square overflow-hidden">
+                            <img src="images/13.jpg" alt="방앗간 일상 3" class="w-full h-full object-cover transform hover:scale-110 transition-transform duration-300" onerror="this.onerror=null;this.src='https://placehold.co/400x400/ccc/fff?text=Gallery';">
+                        </div>
+                        <div class="p-3 text-center">
+                            <h3 class="font-bold font-noto text-gray-800">방앗간 일상 3</h3>
+                        </div>
+                    </div>
+                    <!-- 방앗간 일상 4 -->
+                    <div class="bg-gray-100 rounded-lg shadow-md overflow-hidden transform hover:-translate-y-1 transition-transform duration-300">
+                        <div class="aspect-square overflow-hidden">
+                            <img src="images/14.jpg" alt="방앗간 일상 4" class="w-full h-full object-cover transform hover:scale-110 transition-transform duration-300" onerror="this.onerror=null;this.src='https://placehold.co/400x400/ccc/fff?text=Gallery';">
+                        </div>
+                        <div class="p-3 text-center">
+                            <h3 class="font-bold font-noto text-gray-800">방앗간 일상 4</h3>
+                        </div>
+                    </div>
+                    <!-- 방앗간 일상 5 -->
+                    <div class="bg-gray-100 rounded-lg shadow-md overflow-hidden transform hover:-translate-y-1 transition-transform duration-300">
+                        <div class="aspect-square overflow-hidden">
+                            <img src="images/15.jpg" alt="방앗간 일상 5" class="w-full h-full object-cover transform hover:scale-110 transition-transform duration-300" onerror="this.onerror=null;this.src='https://placehold.co/400x400/ccc/fff?text=Gallery';">
+                        </div>
+                        <div class="p-3 text-center">
+                            <h3 class="font-bold font-noto text-gray-800">방앗간 일상 5</h3>
+                        </div>
+                    </div>
+                    <!-- 방앗간 일상 6 -->
+                    <div class="bg-gray-100 rounded-lg shadow-md overflow-hidden transform hover:-translate-y-1 transition-transform duration-300">
+                        <div class="aspect-square overflow-hidden">
+                            <img src="images/16.jpg" alt="방앗간 일상 6" class="w-full h-full object-cover transform hover:scale-110 transition-transform duration-300" onerror="this.onerror=null;this.src='https://placehold.co/400x400/ccc/fff?text=Gallery';">
+                        </div>
+                        <div class="p-3 text-center">
+                            <h3 class="font-bold font-noto text-gray-800">방앗간 일상 6</h3>
+                        </div>
+                    </div>
+                    <!-- 방앗간 일상 7 -->
+                    <div class="bg-gray-100 rounded-lg shadow-md overflow-hidden transform hover:-translate-y-1 transition-transform duration-300">
+                        <div class="aspect-square overflow-hidden">
+                            <img src="images/17.jpg" alt="방앗간 일상 7" class="w-full h-full object-cover transform hover:scale-110 transition-transform duration-300" onerror="this.onerror=null;this.src='https.placehold.co/400x400/ccc/fff?text=Gallery';">
+                        </div>
+                        <div class="p-3 text-center">
+                            <h3 class="font-bold font-noto text-gray-800">방앗간 일상 7</h3>
+                        </div>
+                    </div>
+                    <!-- 방앗간 일상 8 -->
+                    <div class="bg-gray-100 rounded-lg shadow-md overflow-hidden transform hover:-translate-y-1 transition-transform duration-300">
+                        <div class="aspect-square overflow-hidden">
+                            <img src="images/18.jpg" alt="방앗간 일상 8" class="w-full h-full object-cover transform hover:scale-110 transition-transform duration-300" onerror="this.onerror=null;this.src='https.placehold.co/400x400/ccc/fff?text=Gallery';">
+                        </div>
+                        <div class="p-3 text-center">
+                            <h3 class="font-bold font-noto text-gray-800">방앗간 일상 8</h3>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
 
         <!-- 고객 후기 섹션 -->
-        <section id="testimonials" class="py-20 bg-white">
+        <section id="testimonials" class="py-20 bg-gray-50">
             <div class="container mx-auto px-6 text-center">
                 <h2 class="section-title font-noto">고객의 목소리</h2>
                 <p class="section-subtitle">멀리서도 찾아오시는 고객들의 진심어린 후기 (발췌)</p>
                 <div class="grid md:grid-cols-3 gap-8 text-left">
-                    <div class="bg-gray-50 p-8 rounded-lg shadow-md border-t-4 border-amber-400">
+                    <div class="bg-white p-8 rounded-lg shadow-md border-t-4 border-amber-400">
                         <i class="ph ph-quotes text-4xl text-amber-400 mb-4"></i>
                         <p class="text-gray-700 mb-4">"이 참기름 사려고 한 시간 걸려 왔어요. 정말 고소하고 진짜 참기름 맛이 나요. 시중에서 파는 것과는 차원이 달라요!"</p>
                         <p class="font-bold font-noto">- 김동훈 고객 (인천에서)</p>
                     </div>
-                    <div class="bg-gray-50 p-8 rounded-lg shadow-md border-t-4 border-amber-400">
+                    <div class="bg-white p-8 rounded-lg shadow-md border-t-4 border-amber-400">
                         <i class="ph ph-quotes text-4xl text-amber-400 mb-4"></i>
                         <p class="text-gray-700 mb-4">"여기 인절미는 정말 차원이 달라요. 당일 만든 것이라 그런지 쫄깃함이 최고예요. 아이들이 너무 좋아해서 자주 와요."</p>
                         <p class="font-bold font-noto">- 이동민 고객 (수원에서)</p>
                     </div>
-                    <div class="bg-gray-50 p-8 rounded-lg shadow-md border-t-4 border-amber-400">
+                    <div class="bg-white p-8 rounded-lg shadow-md border-t-4 border-amber-400">
                         <i class="ph ph-quotes text-4xl text-amber-400 mb-4"></i>
                         <p class="text-gray-700 mb-4">"사장님 부부가 정말 정성으로 만드시네요. 고춧가루가 맵기만 한 게 아니라 달달한 맛도 있어서 김치 맛이 아주 좋습니다."</p>
                         <p class="font-bold font-noto">- 신호진 고객 (안산에서)</p>
@@ -278,7 +359,7 @@
         </section>
 
         <!-- 오시는 길 및 영업 안내 -->
-        <section id="location" class="py-20 bg-gray-50">
+        <section id="location" class="py-20 bg-white">
             <div class="container mx-auto px-6">
                 <div class="text-center">
                     <h2 class="section-title font-noto">오시는 길 및 영업 안내</h2>
@@ -286,12 +367,12 @@
                 </div>
                 <div class="grid md:grid-cols-2 gap-12 items-center">
                     <div>
-                        <!-- 가게 간판 사진: '20241006_094014.jpg' 파일을 images 폴더에 업로드해주세요. -->
-                        <img src="images/20241006_094014.jpg" 
+                        <!-- [수정됨] 이미지 경로 변경 -->
+                        <img src="images/19.jpg" 
                              alt="새마을방앗간 정면 간판" 
                              class="rounded-lg shadow-lg w-full mb-8 border">
                         
-                        <div class="bg-white p-6 rounded-lg shadow-md">
+                        <div class="bg-gray-100 p-6 rounded-lg shadow-md">
                             <h3 class="font-bold text-xl mb-4 font-noto">영업 시간</h3>
                             <ul class="space-y-2 text-gray-700">
                                 <li class="flex items-center"><i class="ph ph-calendar-check point-green mr-3"></i> <strong>운영일:</strong> 월, 화, 목, 금, 토, 일</li>
@@ -301,11 +382,10 @@
                         </div>
                     </div>
                     <div>
-                        <!-- 지도 부분: 네이버 지도 공유 코드로 교체 -->
                         <div class="aspect-w-16 aspect-h-9 rounded-lg overflow-hidden shadow-lg mb-8 border">
                             <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3171.185292671041!2d126.84024801563202!3d37.3622449798363!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x357b6e0a8b9e6a9f%3A0x633532c52516447!2z6rK96riw64-EIOyEseuCqOq1rCDtlZzsp4DroZwg7ZWY7Kec66GcMTM267KI6ri4IDQtMTM!5e0!3m2!1sko!2skr!4v1662534578123!5m2!1sko!2skr" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                         </div>
-                        <div class="bg-white p-6 rounded-lg shadow-md">
+                        <div class="bg-gray-100 p-6 rounded-lg shadow-md">
                             <h3 class="font-bold text-xl mb-4 font-noto">연락처 및 주소</h3>
                             <ul class="space-y-3 text-gray-700">
                                 <li class="flex items-start"><i class="ph ph-phone-call point-green mr-3 mt-1"></i> <div><strong>전화:</strong> <a href="tel:0507-1467-0934" class="text-blue-600 hover:underline">0507-1467-0934</a> (클릭하여 전화걸기)</div></li>
@@ -343,11 +423,14 @@
         // 모바일 메뉴 토글 기능
         const mobileMenuButton = document.getElementById('mobile-menu-button');
         const mobileMenu = document.getElementById('mobile-menu');
+        const mobileMenuLinks = mobileMenu.querySelectorAll('a');
+
         mobileMenuButton.addEventListener('click', () => {
             mobileMenu.classList.toggle('hidden');
         });
+        
         // 모바일 메뉴의 링크 클릭 시 메뉴 닫기
-        mobileMenu.querySelectorAll('a').forEach(link => {
+        mobileMenuLinks.forEach(link => {
             link.addEventListener('click', () => {
                 mobileMenu.classList.add('hidden');
             });
@@ -372,4 +455,3 @@
 
 </body>
 </html>
-
